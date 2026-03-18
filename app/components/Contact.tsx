@@ -13,17 +13,17 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `Hi CloudX Cafe! 👋%0A%0AI'd like to reserve a table:%0AName: ${form.name}%0APhone: ${form.phone}%0ADate: ${form.date}%0ATime: ${form.time}%0AGuests: ${form.guests}%0AMessage: ${form.message}`;
-    window.open(`https://wa.me/919993396109?text=${msg}`, "_blank");
+    const textMsg = `Hi CloudX Cafe! 👋\n\nI'd like to reserve a table:\nName: ${form.name}\nPhone: ${form.phone}\nDate: ${form.date}\nTime: ${form.time}\nGuests: ${form.guests}\nMessage: ${form.message}`;
+    window.location.href = `https://wa.me/919993396109?text=${encodeURIComponent(textMsg)}`;
     setSubmitted(true);
   };
 
   return (
     <section id="contact" className="py-20 sm:py-24 relative overflow-hidden flex flex-col items-center">
-      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-purple-900/20 blur-[140px]" />
-      <div className="absolute top-1/3 right-0 w-64 h-64 rounded-full bg-pink-900/15 blur-[120px]" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-purple-900/20 blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-64 h-64 rounded-full bg-pink-900/15 blur-[120px] pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -167,7 +167,7 @@ export default function Contact() {
                         type="tel"
                         name="phone"
                         required
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 98xxx xxx10"
                         value={form.phone}
                         onChange={handleChange}
                         className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-purple-500/60 transition-colors"

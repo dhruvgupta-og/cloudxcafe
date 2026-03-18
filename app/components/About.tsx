@@ -42,7 +42,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/60 to-transparent" />
             </div>
             {/* Floating secondary image */}
-            <div className="absolute -bottom-10 -right-8 w-48 h-56 rounded-xl overflow-hidden neon-border-pink shadow-xl shadow-pink-900/30 border-2 border-[#12121a]">
+            <div className="absolute -bottom-10 -right-8 w-48 h-56 rounded-xl overflow-hidden neon-border-pink shadow-xl shadow-pink-900/30 border-2 border-[#12121a] animate-float">
               <Image
                 src="/cafe-mocktail.png"
                 alt="CloudX Cafe signature mocktail drink"

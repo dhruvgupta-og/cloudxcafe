@@ -60,13 +60,18 @@ export default function Navbar() {
           </ul>
 
           {/* Reserve CTA */}
-          <div className="hidden md:flex items-center justify-end flex-shrink-0">
-            <a
-              href="#reservation"
+          <div className="hidden lg:flex items-center justify-end flex-shrink-0">
+            <button
+              onClick={() => {
+                const element = document.getElementById("reservation");
+                if (element) {
+                   element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white text-sm font-semibold hover:shadow-lg hover:shadow-purple-500/40 hover:scale-105 transition-all duration-300 whitespace-nowrap"
             >
               Reserve a Table
-            </a>
+            </button>
           </div>
 
           {/* Mobile Hamburger */}
@@ -104,13 +109,18 @@ export default function Navbar() {
                 </li>
               ))}
               <li className="pt-2">
-                <a
-                  href="#reservation"
-                  onClick={() => setMenuOpen(false)}
-                  className="block text-center px-5 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold"
+                <button
+                  onClick={() => {
+                    setMenuOpen(false);
+                    const element = document.getElementById("reservation");
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  className="block w-full text-center px-5 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold"
                 >
                   Reserve a Table
-                </a>
+                </button>
               </li>
             </ul>
           </motion.div>

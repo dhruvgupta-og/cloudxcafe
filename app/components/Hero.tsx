@@ -24,9 +24,9 @@ export default function Hero() {
       </div>
 
       {/* Neon Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-600/20 blur-[100px] animate-pulse" />
-      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-pink-600/15 blur-[120px] animate-pulse" style={{ animationDelay: "1s" }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-cyan-600/10 blur-[150px]" />
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-600/20 blur-[100px] animate-blob" />
+      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-pink-600/15 blur-[120px] animate-blob animation-delay-2000" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-cyan-600/10 blur-[150px] animate-blob animation-delay-4000" />
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-[90vh] text-center px-4 sm:px-6 w-full max-w-7xl mx-auto pt-28 pb-12">
         {/* Badge */}
@@ -84,7 +84,7 @@ export default function Hero() {
           <a
             id="hero-view-menu"
             href="#menu"
-            className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-size-200 text-white font-bold text-sm sm:text-base hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300 min-w-[160px] text-center w-full sm:w-auto flex justify-center items-center"
+            className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-size-200 animate-gradient-x text-white font-bold text-sm sm:text-base hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300 min-w-[160px] text-center w-full sm:w-auto flex justify-center items-center"
           >
             🍽️ View Menu
           </a>
@@ -97,13 +97,18 @@ export default function Hero() {
           >
             📍 Get Directions
           </a>
-          <a
+          <button
             id="hero-reserve"
-            href="#reservation"
+            onClick={() => {
+              const element = document.getElementById("reservation");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
             className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full glass neon-border-pink text-white font-bold text-sm sm:text-base hover:bg-pink-500/20 hover:scale-105 transition-all duration-300 min-w-[160px] text-center w-full sm:w-auto flex justify-center items-center"
           >
             🪑 Reserve Table
-          </a>
+          </button>
         </motion.div>
 
         {/* Stats */}
